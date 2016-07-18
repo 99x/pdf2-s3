@@ -3,10 +3,8 @@
 This library will download a pdf from a given url and upload it to a given s3 bucket.
 
 ## How to install
-Clone or download the repo.
-Open a terminal or a command prompt inside the folder.
 ```
-npm install
+npm install pdf2-s3
 ```
 
 ## Prerequisite 
