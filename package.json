@@ -1,0 +1,27 @@
+{
+  "name": "pdf2s3",
+  "version": "1.0.0",
+  "description": "Download a pdf from a url and uploads to a given s3 bucket",
+  "main": "pdf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pdf",
+    "download",
+    "url",
+    "upload",
+    "s3",
+	"bucket",
+    "weblink"
+  ],
+  "author": "Manoj Fernando",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.4.7",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "node-uuid": "^1.4.7",
+    "url": "^0.11.0"
+  }
+}
