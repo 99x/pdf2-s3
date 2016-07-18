@@ -1,6 +1,6 @@
 {
   "name": "pdf2-s3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Download a pdf from a url and uploads to a given s3 bucket",
   "main": "pdf.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "url",
     "upload",
     "s3",
-	"bucket",
+    "bucket",
     "weblink"
   ],
   "author": "Manoj Fernando",
