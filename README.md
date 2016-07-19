@@ -23,15 +23,19 @@ More Information : https://aws.amazon.com/sdk-for-node-js
 ## How to Use
 ```
 var Pdf2S3 = require('pdf2-s3'),
-    url = 'https://test.com/test.pdf',
-    bucketName = 'my-pdf-upload-bucket';
-    
-Pdf2S3.start(url, bucketName, function(err, path) {
+    options = {
+        url: 'https://test.com/test.pdf', 
+        bucketName: 'my-pdf-uploads', 
+        key: 'subfolder-name/pdf-name.pdf' // optional
+    }
+   
+Pdf2S3.start(options, function(err, path) {
         // path variable contains the s3 bucket file url of the uploaded pdf. 
         if (err) {
+            console.log(err);
             /* Your error handling code */
         } else {
-            var pathToS3PdfUrl = path;
+            console.log(path);
             /* Your code here */
         }
     });
