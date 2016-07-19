@@ -1,6 +1,6 @@
 {
   "name": "pdf2-s3",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Download a pdf from a url and uploads to a given s3 bucket",
   "main": "pdf.js",
   "scripts": {
