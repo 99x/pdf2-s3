@@ -16,6 +16,12 @@
     "weblink"
   ],
   "author": "Manoj Fernando",
+  "email": "mj.bitwave@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjzone/Pdf2S3.git"
+  },
+  "url": "https://github.com/mjzone/Pdf2S3",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.4.7",
