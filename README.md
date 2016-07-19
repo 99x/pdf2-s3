@@ -18,6 +18,7 @@ aws_access_key_id = your_access_key
 aws_secret_access_key = your_secret_key
 ```
 More Information : https://aws.amazon.com/sdk-for-node-js
+                   http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html
 
 ## How to Use
 ```
