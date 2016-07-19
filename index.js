@@ -5,6 +5,7 @@ var AWS = require('aws-sdk'),
     http = require('http'),
     https = require('https'),
     uuid = require('node-uuid'),
+    path = require('path'),
     s3 = new AWS.S3();
 
 var protocols = {
@@ -12,8 +13,14 @@ var protocols = {
     'https:': https
 };
 
-var downloadPdf = function(url, fn) {
-    var protocol = protocols[URL.parse(url).protocol];
+var downloadPdf = function (url, fn) {
+    var urlObj = URL.parse(url),
+        protocol = protocols[urlObj.protocol];
+    
+    if (path.extname(urlObj.pathname) !== '.pdf') {
+        throw '[URLError] Given url is not a pdf link';
+    }
+
     protocol.get(url, function(res) {
         var chunks = [];
         // Gets called each time when the buffer is full.
