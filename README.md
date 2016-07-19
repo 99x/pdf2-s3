@@ -1,6 +1,6 @@
 # Description
 
-This library will download a pdf from a given url and upload it to a given s3 bucket.
+This library will download a pdf from a given web url and upload it to a given s3 bucket.
 
 ## How to install
 ```
