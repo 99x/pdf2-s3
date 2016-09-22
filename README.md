@@ -20,7 +20,7 @@ aws_secret_access_key = your_secret_key
 More Information : http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html
 
 ## How to Use
-```
+```javascript
 var Pdf2S3 = require('pdf2-s3'),
     options = {
         url: 'https://test.com/test.pdf', 
