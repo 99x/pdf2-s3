@@ -1,3 +1,4 @@
+[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/pdf2-s3-chat)
 # Description
 
 This library will download a pdf from a given web url and upload it to a given s3 bucket.
