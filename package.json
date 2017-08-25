@@ -4,7 +4,7 @@
   "description": "Download a pdf from a web url and uploads to a given s3 bucket",
   "main": "pdf.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests added\""
   },
   "keywords": [
     "pdf",
