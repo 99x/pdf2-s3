@@ -9,7 +9,7 @@ npm install pdf2-s3
 
 ## Prerequisite 
 You should have AWS configuration settings setup before using Pdf2S3. If you haven't done that already,
-Create a credentials file at `~/.aws/credentials` on Mac/Linux or `C:\Users\USERNAME\\.aws\credentials` on Windows. 
+Create a credentials file at `~/.aws/credentials` on Mac/Linux or `C:\Users\USERNAME\.aws\credentials` on Windows. 
 Add your credentials to that .aws file as follows.
 
 ```
