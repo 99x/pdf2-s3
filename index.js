@@ -14,7 +14,7 @@ var protocols = {
 };
 
 var downloadPdf = function(url, fn) {
-        var urlObj = URL.parse(url),
+    var urlObj = URL.parse(url),
         protocol = protocols[urlObj.protocol];
 
     if (path.extname(urlObj.pathname) !== '.pdf') {
