@@ -23,7 +23,7 @@ var downloadPdf = function(url, fn) {
 
     protocol.get(url, function(res) {
         var chunks = [];
-        var fileSize = parseFloat(res.headers['content-length']);
+        var fileSize = res.headers['content-length'];
         var downloadedSize = 0;
         // Gets called each time when the buffer is full.
         res.on('data', function (chunk) {
