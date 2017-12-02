@@ -23,9 +23,13 @@ var downloadPdf = function(url, fn) {
 
     protocol.get(url, function(res) {
         var chunks = [];
+        var fileSize = res.headers['content-length'];
+        var downloadedSize = 0;
         // Gets called each time when the buffer is full.
         res.on('data', function (chunk) {
-            console.log('downloading...');
+            downloadedSize += chunk.length;
+            var percentage=(downloadedSize/fileSize * 100).toFixed(2);
+            console.log('downloading...' + percentage + '%');
             chunks.push(chunk);
         });
         // Gets called once the stream is finished.
@@ -36,6 +40,7 @@ var downloadPdf = function(url, fn) {
     }).on('error', function(err) {
         fn('[CaptureFailure] ' + err);
     });
+
 };
 
 var validateKey = function (key) {
