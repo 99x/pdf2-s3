@@ -26,6 +26,8 @@ var Pdf2S3 = require('pdf2-s3'),
         url: 'https://test.com/test.pdf', 
         bucketName: 'my-pdf-uploads', 
         key: 'subfolder-name/pdf-name.pdf' // optional
+        uploadPartSize: 1024 * 1024 * 5, // size of a single part (min is 5 mb)
+        uploadQueueSize: 1 // number of parts which gets uploaded parallely
     }
    
 Pdf2S3.start(options, function(err, path) {
