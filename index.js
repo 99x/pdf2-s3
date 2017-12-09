@@ -54,21 +54,32 @@ var validateKey = function (key) {
 };
 
 var uploadToS3 = function(options, data, fn) {
-    var pdfBuffer = new Buffer.concat(data),
-        params = {
-            Bucket: options.bucketName,
-            Key: validateKey(options.key),
-            ContentType: 'application/pdf',
-            ContentDisposition: 'inline',
-            Body: pdfBuffer
-        };
-
-    s3.putObject(params, function(err, response) {
-        if (err) {
-            fn('[UploadFailure] ' + err);
-        } else {
-            console.log('uploaded to s3');
-            fn(null, params.Key);
+    var pdfBuffer = new Buffer.concat(data);
+    var params = {
+      Bucket: options.bucketName,
+      Key: validateKey(options.key),
+      ContentType: 'application/pdf',
+      ContentDisposition: 'inline',
+      Body: pdfBuffer
+    };
+    var uploadProgress = 0;
+    
+    var fileUploadTask = new AWS.S3.ManagedUpload({
+      params: params,
+      partSize: options.uploadpartSize,
+      queueSize: options.uploadQueueSize
+    });
+        
+    fileUploadTask.on('httpUploadProgress',function (progress){
+      uploadProgress = (progress.loaded/progress.total) * 100;
+      console.log('Upload Progress '+ uploadProgress.toFixed(2));
+    });
+    
+    fileUploadTask.send(function(error,data){
+      if (error) {
+        console.log('Upload Failed');
+      } else{
+          console.log('Upload Completed');  
         }
     });
 };
